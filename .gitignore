@@ -36,3 +36,12 @@ xplayer/
 xreader/
 xviewer/
 xviewer-plugins/
+
+*.dsc
+*.changes
+*.deb
+*.ddeb
+*.build
+*.buildinfo
+
+*.swp
