@@ -40,7 +40,7 @@ changeversion() {
 	#fi
 
 	# Now create a useful version number increment.
-	FULLVERSION="$DEBVERSION+ehartmann$BUILDDATE~git$GITTISH"
+	FULLVERSION="$DEBVERSION-$BUILDDATE+ehartmann~git$GITTISH"
     echo "Setting package version to: $FULLVERSION"
 
     dch -v $FULLVERSION "Git build from commit $(git rev-parse HEAD)"
