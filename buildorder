@@ -15,6 +15,7 @@ BUILDORDER=( \
 	cinnamon-screensaver \
 	blueberry \
     nemo \
+    nemo-extensions \
 	flags \
 	xreader \
 	folder-color-switcher \
@@ -60,6 +61,7 @@ REMOTES=( \
 	"https://github.com/linuxmint/cinnamon-screensaver.git" \
 	"https://github.com/linuxmint/blueberry.git" \
     "https://github.com/linuxmint/nemo.git" \
+    "https://github.com/linuxmint/nemo-extensions.git" \
 	"https://github.com/linuxmint/flags.git" \
 	"https://github.com/linuxmint/xreader.git" \
 	"https://github.com/linuxmint/folder-color-switcher.git" \

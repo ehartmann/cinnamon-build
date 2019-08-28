@@ -1,0 +1,15 @@
+#!/bin/bash
+# Stashes and updates all the Cinnamon-relevant things to the latest head version
+
+. buildorder
+
+for dir in ${BUILDORDER[@]}; do
+    echo "..............Running git pull for $dir upstream master"
+    cd $dir
+    git clean -xfd > /dev/null
+    git reset --hard HEAD
+    git fetch --tags > /dev/null
+    latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+    git checkout $latestTag
+    cd ..
+done

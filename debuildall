@@ -40,7 +40,8 @@ changeversion() {
 	#fi
 
 	# Now create a useful version number increment.
-	FULLVERSION="$DEBVERSION-$BUILDDATE~ehartmann~git$GITTISH"
+	#FULLVERSION="$DEBVERSION-$BUILDDATE~ehartmann~git$GITTISH"
+	FULLVERSION="$DEBVERSION"
     echo "Setting package version to: $FULLVERSION"
 
     dch -v $FULLVERSION "Git build from commit $(git rev-parse HEAD)"
@@ -75,11 +76,13 @@ for dir in ${BUILDORDER[@]}; do
         exit 1
     fi
     cd ..
-) &
+) # &
 # store running pids
 PIDS+=($!)
 PROCESSNAMES+=($dir)
 done
+
+exit 0
 
 while [[ ${#PIDS[@]} != 0 ]]; do
 	# Loop over pids look for finishes
