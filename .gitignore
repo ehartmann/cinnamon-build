@@ -37,11 +37,16 @@ xreader/
 xviewer/
 xviewer-plugins/
 
+apturl/
+
 *.dsc
 *.changes
 *.deb
 *.ddeb
 *.build
 *.buildinfo
+*.xz
+*.tar.gz
+*.upload
 
 *.swp

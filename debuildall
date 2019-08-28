@@ -13,7 +13,7 @@ changeversion() {
         grep -Po '(\d+)?:?(\d+)\.(\d+)\.(\d+)')
 
 	# Date we built the source package
-    BUILDDATE=$(date +%s)
+    BUILDDATE=$(date +%Y%m%d%H%M)
     # Commitish
     GITTISH=$(git rev-parse --short HEAD)
 
@@ -44,7 +44,7 @@ changeversion() {
 	FULLVERSION="$DEBVERSION"
     echo "Setting package version to: $FULLVERSION"
 
-    dch -v $FULLVERSION "Git build from commit $(git rev-parse HEAD)"
+    dch -D cosmic -v $FULLVERSION "Git build from commit $(git rev-parse HEAD)"
 }
 
 . buildorder
@@ -69,8 +69,8 @@ for dir in ${BUILDORDER[@]}; do
     fi
     changeversion
     echo "..............Running debuild for $dir"
-    #debuild -S > /dev/null
-    debuild -i -us -uc -b > /dev/null
+    debuild -S > /dev/null
+    #debuild -i -us -uc -b > /dev/null
     if [ $? != 0 ]; then
         echo "ERROR with $dir!"
         exit 1

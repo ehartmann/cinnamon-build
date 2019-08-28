@@ -13,4 +13,4 @@ init:
 	./git-clone-all
 
 clean:
-	rm -f *.dsc *.changes *.tar.gz *.tar.xz *.build *.buildinfo *.ddeb
+	rm -f *.dsc *.changes *.tar.gz *.tar.xz *.build *.buildinfo *.ddeb *.deb *.upload
