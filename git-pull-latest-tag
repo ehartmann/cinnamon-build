@@ -8,7 +8,7 @@ for dir in ${BUILDORDER[@]}; do
     cd $dir
     git clean -xfd > /dev/null
     git reset --hard HEAD
-    git fetch --tags > /dev/null
+    git fetch --tags -f > /dev/null
     latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
     git checkout $latestTag
     cd ..
