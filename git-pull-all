@@ -9,6 +9,6 @@ for dir in ${BUILDORDER[@]}; do
     git clean -xfd
     git reset --hard HEAD
     git checkout master
-    git pull
+    git pull -a
     cd ..
 done

@@ -7,7 +7,9 @@ for dir in ${BUILDORDER[@]}; do
     echo "..............Running git pull for $dir upstream master"
     cd $dir
     git clean -xfd > /dev/null
-    git reset --hard HEAD
+    git reset --hard HEAD > /dev/null
+    git switch master > /dev/null
+    git pull > /dev/null
     git fetch --tags -f > /dev/null
     latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
     git checkout $latestTag
