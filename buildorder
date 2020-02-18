@@ -38,6 +38,7 @@ BUILDORDER=( \
 	python-xapp \
 	slick-greeter \
 	timeshift \
+	xplayer-plparser \
 	xplayer \
 	xreader \
 	xviewer \

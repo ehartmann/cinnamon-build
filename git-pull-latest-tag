@@ -11,7 +11,8 @@ for dir in ${BUILDORDER[@]}; do
     git switch master > /dev/null
     git pull > /dev/null
     git fetch --tags -f > /dev/null
-    latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
+    latestTag=`git tag | grep -Ev "(master.*|betsy.*|iter.*|nemo.*)" | sort -V | tail -n 1`
+    #latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
     git checkout $latestTag
     cd ..
 done
